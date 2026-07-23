@@ -4,7 +4,7 @@ Image transformation to tensors
 
 from torchvision import transforms
 
-from src.config import IMAGE_SIZE
+from src.settings import settings
 
 
 def get_train_transforms() -> transforms.Compose:
@@ -14,7 +14,7 @@ def get_train_transforms() -> transforms.Compose:
 
     return transforms.Compose(
         [
-            transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
+            transforms.Resize((settings.dataset.image_size, settings.dataset.image_size)),
             transforms.ToTensor(),
         ]
     )
@@ -27,7 +27,7 @@ def get_val_transforms() -> transforms.Compose:
 
     return transforms.Compose(
         [
-            transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
+            transforms.Resize((settings.dataset.image_size, settings.dataset.image_size)),
             transforms.ToTensor(),
         ]
     )
@@ -40,7 +40,7 @@ def get_test_transforms() -> transforms.Compose:
 
     return transforms.Compose(
         [
-            transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
+            transforms.Resize((settings.dataset.image_size, settings.dataset.image_size)),
             transforms.ToTensor(),
         ]
     )
