@@ -1,4 +1,16 @@
-/.venv
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+
+# Virtual environments
+.venv/
+.venv/
+ENV/
+env/
 
 /data/test/
 /data/train/
